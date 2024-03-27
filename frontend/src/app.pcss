@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wdth,wght@62.5..100,100..900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wdth,wght@62.5..100,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --grid-col-width: 100%
+    }
+
+    body {
+        @apply bg-primary font-noto-sans text-white
+    }
+
+    h1 {
+        @apply text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-oswald font-normal uppercase
+    }
+
+    h2 {
+        @apply text-5xl font-oswald font-medium;
+    }
+
+    h3 {
+        @apply text-2xl font-oswald font-medium;
+    }
+
+    h4 {
+        @apply text-2xl font-oswald
+    }
+
+    a {
+        @apply inline-block
+    }
+
+    .padding {
+        @apply px-3
+    }
+
+    .link {
+        @apply inline-flex flex-nowrap items-center gap-x-4 py-2.5 text-sm transition-all ease-in duration-150
+        hover:gap-x-6
+        after:w-[24px] after:h-[24px] after:bg-[url('./icons/arrow-right.svg')] after:bg-no-repeat after:bg-center after:bg-cover after:shrink-0
+    }
+
+    .link-btn  {
+        @apply w-[--grid-col-width] inline-flex flex-nowrap justify-between items-center border-l px-6 py-2.5 text-sm
+        after:w-[24px] after:h-[24px] after:bg-[url('./icons/simple-arrow-right.svg')] after:bg-no-repeat after:bg-center after:bg-cover after:shrink-0
+    }
+
+    .header {
+        @apply border-b border-white py-5 h-28 z-30 bg-primary
+    }
+
+    .nav {
+        @apply flex items-center justify-between font-noto-sans text-sm;
+    }
+
+    .nav-list {
+        @apply hidden md:flex gap-x-6
+    }
+
+    .nav-list-mobile {
+        @apply flex md:hidden flex-col gap-y-3
+    }
+
+    .wrapper {
+        @apply relative flex flex-col h-full
+    }
+
+    .content {
+        @apply flex-grow flex-shrink basis-auto relative
+    }
+
+    .main-screen {
+        @apply relative bg-[url('./images/main.png')] bg-no-repeat bg-cover bg-bottom h-screen -mt-28 pt-28 overflow-hidden
+        before:bg-[url('./images/barbed-wire.svg')] before:bg-no-repeat before:bg-cover before:w-full before:opacity-30 before:absolute before:left-0 before:right-0 before:top-1/2 before:bottom-0 before:pointer-events-none
+    }
+
+    .footer {
+        @apply flex-grow-0 flex-shrink-0 basis-auto z-30 bg-secondary py-9 text-white
+    }
+
+    .text-fill-transparent {
+        -webkit-text-fill-color: transparent
+    }
+
+    .embla__container {
+        @apply flex
+    }
+
+    .embla__slide {
+        @apply grow-0 shrink-0 w-full md:w-[calc(var(--grid-col-width)_*_1.5)] lg:w-[calc(var(--grid-col-width)_*_2)]
+    }
+
+    @media screen(sm) {
+        :root {
+            --grid-col-width: calc(theme(screens[sm]) / 2)
+        }
+    }
+
+    @media screen(md) {
+        :root {
+            --grid-col-width: calc(theme(screens[md]) / 2)
+        }
+    }
+
+    @media screen(lg) {
+        :root {
+            --grid-col-width: calc(theme(screens[lg]) / 4)
+        }
+    }
+}
+
