@@ -82,20 +82,22 @@
     <main class="overflow-hidden">
         <section class="main-screen">
             <div class="container mx-auto h-full">
-                <div class="flex flex-col justify-center items-start gap-10 lg:gap40 h-full py-10 sm:py-0">
-                    <h1 class="flex flex-col gap-1 padding">
-                        <span class="text-fill-transparent bg-clip-text bg-gradient-to-b from-peat to-transparent">ГЕНОЦИД РОМА ВО ВРЕМЯ</span>
-                        <span class="text-fill-transparent bg-clip-text bg-gradient-to-b from-peat to-transparent">ВТОРОЙ МИРОВОЙ ВОЙНЫ</span>
-                        <span class="text-fill-transparent bg-clip-text bg-gradient-to-b from-peat to-transparent">В БЕЛАРУСИ</span>
+                <div class="flex flex-col justify-center items-start gap-10 lg:gap40 h-full py-10">
+                    <h1 class="flex-1 flex flex-col justify-end gap-1 padding">
+                        <span class="text-fill-transparent bg-clip-text bg-gradient-to-b from-70% from-peat to-transparent">ГЕНОЦИД РОМА ВО ВРЕМЯ</span>
+                        <span class="text-fill-transparent bg-clip-text bg-gradient-to-b from-70% from-peat to-transparent">ВТОРОЙ МИРОВОЙ ВОЙНЫ</span>
+                        <span class="text-fill-transparent bg-clip-text bg-gradient-to-b from-70% from-peat to-transparent">В БЕЛАРУСИ</span>
                     </h1>
-                    <div class="w-full md:w-3/4 lg:w-1/2 lg:ml-auto border-l-2 border-white  md:pl-2">
-                        <p class="text-white text-xs md:text-sm font-noto-sans font-normal mb-4">Геноцид в отношении народа рома долгое время оставался неизвестной
-                            страницей нашей истории. Благодаря инициативе Белорусской ромской диаспоры данная тема стала
-                            известна широкой аудитории. С помощью архивных материалов и интервью со свидетелями мы получили
-                            представления о масштабах и форме геноцида.</p>
-                        <p class="text-white text-xs sm:text-sm font-noto-sans font-normal">Данный сайт содержит наиболее полную информацию о геноциде рома во
-                            время Второй мировой войны в Беларуси 1941-1944 гг., включая интервью со свидетелями событий,
-                            архивные документы, научную литературу.</p>
+                    <div class="flex-1 flex items-end w-full md:w-3/4 lg:w-1/2 lg:ml-auto ">
+                        <div class="border-l-2 border-white pl-2">
+                            <p class="text-white text-xs md:text-sm font-normal mb-4">Геноцид в отношении народа рома долгое время оставался неизвестной
+                                страницей нашей истории. Благодаря инициативе Белорусской ромской диаспоры данная тема стала
+                                известна широкой аудитории. С помощью архивных материалов и интервью со свидетелями мы получили
+                                представления о масштабах и форме геноцида.</p>
+                            <p class="text-white text-xs sm:text-sm font-normal">Данный сайт содержит наиболее полную информацию о геноциде рома во
+                                время Второй мировой войны в Беларуси 1941-1944 гг., включая интервью со свидетелями событий,
+                                архивные документы, научную литературу.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,7 +123,7 @@
 
         <section class="py-20">
             <div class="container mx-auto">
-                <div class="flex justify-between items-center gap-2 mb-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 mb-6">
                     <h2 class="padding">Интервью со свидетелями</h2>
                     <a href="#" class="link-btn">Смотреть все</a>
                 </div>
@@ -138,7 +140,7 @@
                                         </blockquote>
                                         <a href="#" class="link">Смотреть интервью</a>
                                     </div>
-                                    <div class="w-[290px]">
+                                    <div class="w-full sm:w-[290px]">
                                         <img src={person.img} alt={person.name} class="w-full h-full object-cover">
                                     </div>
                                 </article>
@@ -172,7 +174,7 @@
         <section class="py-20">
             <div class="container mx-auto h-full relative">
                 <h2 class="padding mb-6">Новости</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-4 mb-10">
                     {#each news as item}
                         <article class="w-full md:w-[calc(var(--grid-col-width)_-_24px)] h-[511px] mx-auto overflow-hidden rounded-lg">
                             <div class="h-full flex flex-col items-stretch bg-white">
@@ -180,17 +182,20 @@
                                     <img src={item.img} alt={item.title} class="w-full h-full object-cover">
                                 </div>
                                 <div class="flex flex-col justify-between items-stretch text-black h-full">
-                                    <div class="p-4">
+                                    <div class="p-4 overflow-hidden">
                                         <span>{item.date}</span>
                                         <h4>{item.title}</h4>
                                     </div>
-                                    <a href="#" class="p-4 flex justify-between items-center border-t border-black after:w-[34px] after:h-[34px] after:bg-[url('./icons/black-arrow-right.svg')] after:bg-no-repeat after:bg-center after:bg-cover after:shrink-0">
+                                    <a href="#" class="p-4 flex justify-between items-center border-t border-black shrink-0 after:w-[34px] after:h-[34px] after:bg-[url('./icons/black-arrow-right.svg')] after:bg-no-repeat after:bg-center after:bg-cover after:shrink-0">
                                         Читать далее
                                     </a>
                                 </div>
                             </div>
                         </article>
                     {/each}
+                </div>
+                <div class="flex justify-end">
+                    <a href="#" class="link-btn">Смотреть все</a>
                 </div>
             </div>
         </section>
