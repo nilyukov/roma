@@ -42,8 +42,8 @@
     },
     "content": {
       "type": "customField",
-      "required": true,
       "options": {
+        "output": "HTML",
         "preset": "toolbar"
       },
       "customField": "plugin::ckeditor5.CKEditor"

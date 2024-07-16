@@ -979,10 +979,10 @@ export interface ApiPostPost extends Schema.CollectionType {
     metaTitle: Attribute.String & Attribute.Required;
     metaDescription: Attribute.Text & Attribute.Required;
     content: Attribute.RichText &
-      Attribute.Required &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
+          output: 'HTML';
           preset: 'toolbar';
         }
       >;
